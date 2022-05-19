@@ -1,8 +1,20 @@
-import { render } from '@testing-library/react';
+
+import { render, screen } from '@testing-library/react';
+import user from '@testing-library/user-event';
 
 import App from '../App';
 
-test('Renders main page correctly', () => {
+test('Renders main page correctly', async () => {
   render(<App />);
-  expect(true).toBeTruthy();
+  const buttonCount = await screen.findByRole('button');
+  const codeCount = await screen.queryByText(/The count is now:/);
+
+  expect(buttonCount.innerHTML).toBe('count is: 0');
+  expect(codeCount).not.toBeInTheDocument();
+
+  user.click(buttonCount);
+  user.click(buttonCount);
+
+  expect(buttonCount.innerHTML).toBe('count is: 2');
+  expect(await screen.queryByText(/The count is now:/)).toBeInTheDocument();
 });

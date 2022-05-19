@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
@@ -15,6 +15,11 @@ function App() {
             count is: {count}
           </button>
         </p>
+        {count > 0 
+          ? <p>
+              <code>The count is now: {count}</code>
+            </p>
+          : null}
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
