@@ -1,5 +1,4 @@
-// import { render, screen } from "@testing-library/react";
-// import App from "../App";
+// import '@types/jest';
 
 describe("App", () => {
   it("should work as expected", () => {

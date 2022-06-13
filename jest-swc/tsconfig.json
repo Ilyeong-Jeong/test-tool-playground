@@ -18,7 +18,6 @@
     "types": [
       "node",
       "jest",
-      "reflect-metadata",
     ],
   },
   "include": [
