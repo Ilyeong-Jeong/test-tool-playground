@@ -1,9 +1,9 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { useCounter } from './useCounter'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { increment, decrement, count } = useCounter();
 
   return (
     <div className="App">
@@ -16,9 +16,13 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <p>{count}</p>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => increment()}>
+          +
+        </button>
+        <button onClick={() => decrement()}>
+          -
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
