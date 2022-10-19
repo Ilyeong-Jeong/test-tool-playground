@@ -6,7 +6,7 @@ describe('useCounter hook', () => {
   it('should increment the count', () => {
   const { result } = renderHook(() => useCounter());
     act(() => {
-       result.current.increment();
+      result.current.increment();
     })
     expect(result.current.count).toBe(1);
   });
@@ -14,7 +14,7 @@ describe('useCounter hook', () => {
   it('should decrement the count', () => {
   const { result } = renderHook(() => useCounter());
     act(() => {
-        result.current.decrement();
+      result.current.decrement();
     })
     expect(result.current.count).toBe(-1);
   })
