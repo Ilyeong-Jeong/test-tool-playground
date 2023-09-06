@@ -1,0 +1,21 @@
+.button {
+  @apply border rounded cursor-pointer;
+  &.btn-small {
+    @apply px-2 py-1;
+  }
+  &.btn-medium {
+    @apply px-4 py-2;
+  }
+  &.btn-large {
+    @apply px-8 py-3;
+  }
+  &.btn-primary {
+    @apply bg-primary text-white border-primary;
+  }
+  &.btn-dark {
+    @apply bg-jet text-white border-jet;
+  }
+  &.btn-light {
+    @apply bg-white text-black border-black;
+  }
+}
