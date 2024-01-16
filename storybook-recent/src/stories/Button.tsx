@@ -1,48 +1,32 @@
-import React from 'react';
-import './button.css';
+import './button.scss';
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+export enum ButtonSize {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export enum ButtonColor {
+  PRIMARY = 'primary',
+  DARK = 'dark',
+  LIGHT = 'light',
+}
+
+function Button(props: {
+  size?: ButtonSize;
+  color?: ButtonColor;
+  children: React.ReactNode;
+}) {
   return (
     <button
+      className={`button btn-${props.size || ButtonSize.MEDIUM} btn-${
+        props.color || ButtonColor.LIGHT
+      }`}
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
     >
-      {label}
+      {props.children}
     </button>
   );
-};
+}
+
+export default Button;

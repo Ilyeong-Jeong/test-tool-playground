@@ -1,0 +1,30 @@
+// test
+.button {
+  border: 1px solid;
+  border-radius: 4px;
+
+  &.btn-small {
+    padding: 4px 8px;
+  }
+  &.btn-medium {
+    padding: 8px 16px;
+  }
+  &.btn-large {
+    padding: 12px 32px;
+  }
+  &.btn-primary {
+    color: #FFFFFF;
+    background-color: #F24141;
+    border-color: #F24141;
+  }
+  &.btn-dark {
+    color: #FFFFFF;
+    background-color: #333333;
+    border-color: #333333;
+  }
+  &.btn-light {
+    color: #000000;
+    background-color: #FFFFFF;
+    border-color: #000000;
+  }
+}
